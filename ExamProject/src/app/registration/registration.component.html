@@ -1,0 +1,35 @@
+<p>registration works!</p>
+
+<form [formGroup]='personForm'>
+
+    <p *ngIf="!personForm.valid">*requied</p>
+    Name<input formControlName="name">
+  
+    <p *ngIf="!personForm.valid">*requied</p>
+    Surname<input formControlName ="surname"><br>
+  
+   <p *ngIf="!personForm.valid">*requied</p>
+    Age<input formControlName="age"><br>
+  
+    <p *ngIf="!personForm.valid">*requied</p>
+    Email<input formControlName="email"> <br>
+  
+    <p *ngIf="!personForm.valid">*requied</p>
+    Contact<input formControlName="contact"> <br>
+  
+  
+    <button (click) = "AddDetails()" [disabled]="!personForm.valid" mat-raised-button color="warm">Save</button>
+  
+    <div *ngFor="let details of detail">
+
+        {{details.myName}}<br>
+        {{details.mySurname}}<br>
+        {{details.myAge}}<br>
+        {{details.myEmail}}<br>
+        {{details.myContact}}
+      
+      </div>
+
+      
+  </form>
+  <router-outlet></router-outlet>
